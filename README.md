@@ -9,7 +9,6 @@ challenge will also give you practice in modifying existing applications to
 add new functionality.
 
 ### Constraints ###
-
 - Read the user stories below carefully. Some of the functionality created
 for JSON2CSV will need to be modified.
 - You may not use any libraries or packages designed to perform this type of
