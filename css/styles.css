@@ -1,8 +1,18 @@
+* {
+     padding: 0;
+     margin: 0;
+     list-style: none;
+     border: 0;
+     text-decoration: none;
+     box-sizing: border-box;
+}
+body {
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
 #content-main {
      display: flex;
     flex-direction: column;
-
-    width: 100%;
 }
 
 header {
@@ -17,4 +27,13 @@ h1 {
 #csv-json-content {
      display: flex;
      flex-direction: row;
+}
+
+/* #csv-content, #json-content {
+    display: flex;
+    flex-direction: column;
+} */
+.inputs {
+    display: flex;
+    flex-direction: column;
 }
