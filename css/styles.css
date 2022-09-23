@@ -7,22 +7,24 @@
      box-sizing: border-box;
 }
 body {
-     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-}
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
 
 #content-main {
-     display: flex;
+    display: flex;
     flex-direction: column;
 }
 
 header {
-
+    width: 100%;
+    margin-top: 1rem;
+    background-color: red;
 }
 h1 {
      
 }
 #warning {
-     
+    margin-top: 2rem;
 }
 #csv-json-content {
      display: flex;
