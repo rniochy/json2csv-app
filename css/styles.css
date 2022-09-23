@@ -20,8 +20,15 @@ header {
     margin-top: 1rem 0 1rem 0;
     border-bottom: 1px solid #000;
 }
+header {
+    margin-top: 0.1rem;
+}
 h1 {
-     
+   font-size: 16pt;
+   text-align: center;
+}
+section h2 {
+    font-size: 14pt;
 }
 #warning {
     margin-top: 2rem;
@@ -30,14 +37,23 @@ h1 {
      display: flex;
      flex-direction: row;
 }
-
-/* #csv-content, #json-content {
-    display: flex;
-    flex-direction: column;
-} */
 .inputs {
     display: flex;
     flex-direction: column;
+}
+#buttons button, #clear-button {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #5877ff;
+    border-color: #5659f1;
+    margin-top: .1rem;
+}
+#buttons button:hover, #clear-button:hover{
+    background-color: #5877ffda;
+    border-color: #474ae9;
 }
 
 @media screen and (min-width: 0px) and (max-width: 480px) {
@@ -48,42 +64,47 @@ h1 {
     header {
          margin-top: 0.1rem;
     }
-    h1 {
-        font-size: 16pt;
-        text-align: center;
-    }
-    section h2 {
-         font-size: 14pt;
-    }
     #csv-json-content {
         margin-top: 0.2rem;
         display: flex;
         flex-direction: column;
    }
-   .inputs > input {
+   div #csv, #json {
      height: 70px;
      border: 1px solid #ccc;
    }
    #clear-button {
      position: absolute;
-     bottom: 0;
+     bottom: 0.1rem;
      left: 0.1rem;
    }
    #buttons {
       margin-left: 55px;
    }
-   #buttons button, #clear-button {
-        padding: 5px 10px;
-        font-size: 12px;
-        line-height: 1.5;
-        border-radius: 3px;
-        color: #fff;
-        background-color: #5877ff;
-        border-color: #5659f1;
-        margin-top: .1rem;
-    }
-    #buttons button:hover, #clear-button:hover{
-        background-color: #5877ffda;
-        border-color: #474ae9;
-    }
+    /*Mudar a configuração do tamanho dos botoes*/
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    #content-main {
+        position: relative;
+        display: grid;
+        place-items: center;
+        padding: 0.5rem;
+   }
+
+   div #csv, #json {
+    height: 120px;
+    border: 1px solid #ccc;
+  }
+  .inputs {
+    width: 15rem;
+  }
+  #clear-button, #buttons {
+    position: absolute;
+    top: 14rem;
+    left: 0.4rem;
+  }
+  #buttons {
+    left: 3.4rem;
+  }
 }
