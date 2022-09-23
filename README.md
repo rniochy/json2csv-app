@@ -30,7 +30,7 @@ conversion.
 -   [ ] User can click a 'Clear' button to clear the contents of both the JSON and CSV text boxes.
 
 ## Bonus features
-
+    
 -   [ ] User can enter the path to the CSV file on the local file system in a text box
 -   [ ] User can click a 'Open CSV' button to load file containing the CSV into the text box
 -   [ ] User can see a warning message if the CSV file is not found
