@@ -17,8 +17,8 @@ body {
 
 header {
     width: 100%;
-    margin-top: 1rem;
-    background-color: red;
+    margin-top: 1rem 0 1rem 0;
+    border-bottom: 1px solid #000;
 }
 h1 {
      
@@ -29,8 +29,6 @@ h1 {
 #csv-json-content {
      display: flex;
      flex-direction: row;
-
-     border: 1px solid #000;
 }
 
 /* #csv-content, #json-content {
@@ -40,4 +38,52 @@ h1 {
 .inputs {
     display: flex;
     flex-direction: column;
+}
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+    #content-main {
+         position: relative;
+         padding: 0.1rem;
+    }
+    header {
+         margin-top: 0.1rem;
+    }
+    h1 {
+        font-size: 16pt;
+        text-align: center;
+    }
+    section h2 {
+         font-size: 14pt;
+    }
+    #csv-json-content {
+        margin-top: 0.2rem;
+        display: flex;
+        flex-direction: column;
+   }
+   .inputs > input {
+     height: 70px;
+     border: 1px solid #ccc;
+   }
+   #clear-button {
+     position: absolute;
+     bottom: 0;
+     left: 0.1rem;
+   }
+   #buttons {
+      margin-left: 55px;
+   }
+   #buttons button, #clear-button {
+        padding: 5px 10px;
+        font-size: 12px;
+        line-height: 1.5;
+        border-radius: 3px;
+        color: #fff;
+        background-color: #5877ff;
+        border-color: #5659f1;
+        margin-top: .1rem;
+    }
+    #buttons button:hover, #clear-button:hover{
+        background-color: #5877ffda;
+        border-color: #474ae9;
+    }
 }
