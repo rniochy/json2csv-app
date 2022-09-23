@@ -29,6 +29,8 @@ h1 {
 #csv-json-content {
      display: flex;
      flex-direction: row;
+
+     border: 1px solid #000;
 }
 
 /* #csv-content, #json-content {
