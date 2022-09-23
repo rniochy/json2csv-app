@@ -1,0 +1,11 @@
+{
+  "name": "json2csv-app",
+  "version": "1.0.0",
+  "description": "In the JSON2CSV application you translated JSON ",
+  "main": "reverse that process by converting a block of CSV text to JSON.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rodrigo @ rniochy",
+  "license": "ISC"
+}
