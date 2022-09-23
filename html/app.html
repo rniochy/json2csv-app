@@ -4,30 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/styles.css" rel="stylesheet"  type="text/css"/>
     <title>JSON2CSV-App</title>
 </head>
 <body>
     <main id="content-main">
         <header>
             <h1>JSON2CSV-App</h1>
-            <span>Warning!!</span>
+            <span id="warning">Warning!!</span>
         </header>
-        <section id="csv-content">
-            <h2>CSV</h2>
-            <div id="csv-inputs">
-                <textarea></textarea>
-                <input type="file"/>
-                <button> Open CSV</button> 
-            </div>
-        </section>
-        <section id="json-content">
-            <h2>Json</h2>
-            <div id="json-inputs">
-                <textarea></textarea>
-                <input type="file"/>
-                <button> Open Json</button> 
-            </div>
-        </section>
+        <div id="csv-json-content">
+            <section id="csv-content">
+                <h2>CSV</h2>
+                <div id="csv-inputs">
+                    <textarea></textarea>
+                    <input type="file"/>
+                    <button> Open CSV</button> 
+                </div>
+            </section>
+            <section id="json-content">
+                <h2>Json</h2>
+                <div id="json-inputs">
+                    <textarea></textarea>
+                    <input type="file"/>
+                    <button> Open Json</button> 
+                </div>
+            </section>
+        </div>
         <div id="buttons">
             <button id="clear-button">Clear</button>
             <button id="covert-button">Convert</button>

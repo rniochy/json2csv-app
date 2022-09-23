@@ -1,0 +1,20 @@
+#content-main {
+     display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+header {
+
+}
+h1 {
+     
+}
+#warning {
+     
+}
+#csv-json-content {
+     display: flex;
+     flex-direction: row;
+}
