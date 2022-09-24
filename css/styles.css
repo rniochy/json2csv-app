@@ -18,11 +18,8 @@ body {
 
 header {
     width: 100%;
-    margin-top: 1rem 0 1rem 0;
+    margin-top: 1rem 0 3rem 0;
     border-bottom: 1px solid #000;
-}
-header {
-    margin-top: 0.1rem;
 }
 h1 {
    font-size: 16pt;
@@ -32,15 +29,26 @@ section h2 {
     font-size: 14pt;
 }
 #warning {
-    margin-top: 2rem;
+    margin-top: 1rem;
+    border: 1px solid red;
 }
 #csv-json-content {
      display: flex;
      flex-direction: row;
+     justify-content: center;
 }
 .inputs {
     display: flex;
     flex-direction: column;
+}
+ #csv, #json {
+    height: 170px;
+    border: 1px solid #ccc;
+  }
+  #clear-button {
+    margin: 1rem;
+    height: 2rem;
+    align-self: center;
 }
 #buttons button, #clear-button {
     padding: 5px 10px;
@@ -72,13 +80,15 @@ section h2 {
    }
    div #csv, #json {
      height: 70px;
-     border: 1px solid #ccc;
    }
    #clear-button {
      position: absolute;
      bottom: 0.3rem;
      left: 0.3rem;
    }
+   #clear-button {
+    height: 28px;
+ }
    #buttons {
       margin-left: 53px;
    }
@@ -88,8 +98,7 @@ section h2 {
 @media screen and (min-width: 480px) and (max-width: 768px) { 
     header {
         width: 97%;
-        margin-top: 0.2rem;
-        margin-left: .4rem;
+        margin-top: 0.2rem 0 0 .4rem;
     }
     #content-main {
          margin-top: 0.1rem;
@@ -104,11 +113,12 @@ section h2 {
    #csv-content, #json-content {
     width: 49%;
     }
-
    div #csv, #json {
     height: 150px;
-    border: 1px solid #ccc;
   }
+  #clear-button {
+    height: 28px;
+}
   #clear-button, #buttons {
     position: absolute;
     top: 15.1rem;
