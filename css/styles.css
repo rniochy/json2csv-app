@@ -89,19 +89,22 @@ section h2 {
         position: relative;
         display: grid;
         place-items: center;
-        padding: 0.5rem;
+        padding: 0.3rem;
    }
 
    div #csv, #json {
     height: 120px;
     border: 1px solid #ccc;
   }
-  .inputs {
-    width: 15rem;
+  .csv-json-content {
+}
+.csv-content, .json-content {
+    
+    background-color: red;
   }
   #clear-button, #buttons {
     position: absolute;
-    top: 14rem;
+    top: 13.5rem;
     left: 0.4rem;
   }
   #buttons {
