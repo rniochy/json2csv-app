@@ -51,7 +51,7 @@ section h2 {
     align-self: center;
 }
   #buttons {
-     margin-left: 10.5rem;
+     align-self: center;
   }
   #buttons button, #clear-button {
     padding: 5px 10px;
@@ -94,6 +94,7 @@ section h2 {
  }
    #buttons {
       margin-left: 58px;
+      align-self: stretch;
    }
     /*Mudar a configuração do tamanho dos botoes*/
 }
@@ -130,5 +131,6 @@ section h2 {
   }
   #buttons {
     left: -6.6rem;
+    margin-left: 10.5rem;
   }
 }
