@@ -50,7 +50,10 @@ section h2 {
     height: 2rem;
     align-self: center;
 }
-#buttons button, #clear-button {
+  #buttons {
+     margin-left: 10.5rem;
+  }
+  #buttons button, #clear-button {
     padding: 5px 10px;
     font-size: 12px;
     line-height: 1.5;
@@ -60,7 +63,7 @@ section h2 {
     border-color: #5659f1;
     margin-top: .1rem;
 }
-#buttons button:hover, #clear-button:hover{
+  #buttons button:hover, #clear-button:hover{
     background-color: #5877ffda;
     border-color: #474ae9;
 }
@@ -83,14 +86,14 @@ section h2 {
    }
    #clear-button {
      position: absolute;
-     bottom: 0.3rem;
-     left: 0.3rem;
+     bottom: -0.7rem;
+     left: -0.5rem;
    }
    #clear-button {
     height: 28px;
  }
    #buttons {
-      margin-left: 53px;
+      margin-left: 58px;
    }
     /*Mudar a configuração do tamanho dos botoes*/
 }
@@ -122,9 +125,9 @@ section h2 {
   #clear-button, #buttons {
     position: absolute;
     top: 15.1rem;
-    left: 0.4rem;
+    left: 0;
   }
   #buttons {
-    left: 3.4rem;
+    left: -6.6rem;
   }
 }
