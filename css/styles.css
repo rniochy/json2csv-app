@@ -8,6 +8,7 @@
 }
 body {
      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     transition: all 500ms;
     }
 
 #content-main {
@@ -59,7 +60,7 @@ section h2 {
 @media screen and (min-width: 0px) and (max-width: 480px) {
     #content-main {
          position: relative;
-         padding: 0.1rem;
+         padding: 0.3rem;
     }
     header {
          margin-top: 0.1rem;
@@ -75,36 +76,42 @@ section h2 {
    }
    #clear-button {
      position: absolute;
-     bottom: 0.1rem;
-     left: 0.1rem;
+     bottom: 0.3rem;
+     left: 0.3rem;
    }
    #buttons {
-      margin-left: 55px;
+      margin-left: 53px;
    }
     /*Mudar a configuração do tamanho dos botoes*/
 }
 
-@media screen and (min-width: 480px) and (max-width: 768px) {
+@media screen and (min-width: 480px) and (max-width: 768px) { 
+    header {
+        width: 97%;
+        margin-top: 0.2rem;
+        margin-left: .4rem;
+    }
     #content-main {
-        position: relative;
-        display: grid;
-        place-items: center;
-        padding: 0.3rem;
+         margin-top: 0.1rem;
+    }
+   #csv-json-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      column-gap: .4rem;
    }
+   #csv-content, #json-content {
+    width: 49%;
+    }
 
    div #csv, #json {
-    height: 120px;
+    height: 150px;
     border: 1px solid #ccc;
-  }
-  .csv-json-content {
-}
-.csv-content, .json-content {
-    
-    background-color: red;
   }
   #clear-button, #buttons {
     position: absolute;
-    top: 13.5rem;
+    top: 15.1rem;
     left: 0.4rem;
   }
   #buttons {
