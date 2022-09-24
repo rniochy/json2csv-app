@@ -56,6 +56,7 @@ section h2 {
  #csv, #json {
     height: 170px;
     border: 1px solid #ccc;
+    resize: none;
   }
   #clear-button {
     margin: 1rem;
@@ -80,7 +81,9 @@ section h2 {
     background-color: #5877ffda;
     border-color: #474ae9;
 }
-
+  .change {
+      
+  }
 @media screen and (min-width: 0px) and (max-width: 480px) {
     #content-main {
          position: relative;
