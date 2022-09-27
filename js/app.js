@@ -10,6 +10,9 @@ const save_button = document.getElementById("save-button");
 const warning = document.getElementById("warning");
 const warningClose = document.getElementById("warning-close");
 
+convert_button.addEventListener('click', ()=>{
+
+})
 clear_button.addEventListener('click', function(){
     csv_input_text.value = "";
     json_input_text.value = "";
@@ -22,8 +25,6 @@ csv_input_text.addEventListener('change', function(){
          json_input_text.setAttribute('disabled', true);
 
      }
-    const converted = CSV2JSON(csv_input_text.value);
-    json_input_text.value =converted;
 });
 csv_input_text.addEventListener('focusout', function(){
      if(!csv_input_text.value){
