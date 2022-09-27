@@ -8,15 +8,20 @@ const clear_button = document.getElementById("clear-button");
 const convert_button = document.getElementById("convert-button");
 const save_button = document.getElementById("save-button");
 const warning = document.getElementById("warning");
+const warningText = document.getElementById("warning-text");
 const warningClose = document.getElementById("warning-close");
 
 convert_button.addEventListener('click', function(){
      if(csv_input_text.value){
           const converted = CSV2JSON(csv_input_text.value);
-          converted.length === 0 ? warning.style = 'visibility: visible':'';
-
-          warning.style = 'visibility: visible':''
-          json_input_text.value =converted;
+          
+          if(converted.length === 0){
+               warningText.innerText = "Fill with CVS valid";
+               warning.style = 'visibility: visible';
+               
+          }else {
+               json_input_text.value =converted;     
+          }
      }
 })
 
