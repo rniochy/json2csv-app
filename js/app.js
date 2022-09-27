@@ -13,12 +13,13 @@ const warningClose = document.getElementById("warning-close");
 convert_button.addEventListener('click', function(){
      if(csv_input_text.value){
           const converted = CSV2JSON(csv_input_text.value);
-          converted.length === 0 ? warning.style = 'visibility: visible';
+          converted.length === 0 ? warning.style = 'visibility: visible':'';
+
+          warning.style = 'visibility: visible':''
           json_input_text.value =converted;
      }
 })
 
-console.log(convert_button)
 clear_button.addEventListener('click', function(){
     csv_input_text.value = "";
     json_input_text.value = "";
