@@ -33,6 +33,7 @@ section h2 {
 #warning {
     border: 1px solid red;
     position: absolute;
+    width: 3rem;
 }
 #csv-json-content {
      display: flex;
