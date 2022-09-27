@@ -44,7 +44,7 @@ json_input_text.addEventListener('focusout', function(){
      }
 });
 warningClose.addEventListener('click', function(){
-     warning.style = "visiblity:none";
+     warning.style = " visibility: hidden";
 });
 // CSV To JSON
 function CSVToArray(strData, strDelimiter) {
