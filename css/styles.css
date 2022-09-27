@@ -20,8 +20,7 @@ body {
 header {
     position: relative;
     width: 100%;
-    /* margin-top: 0rem 0 3rem 0; */
-    padding: 1rem;
+    height: 12vh;
     border-bottom: 1px solid #000;
 }
 h1 {
