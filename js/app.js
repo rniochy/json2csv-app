@@ -8,6 +8,7 @@ const clear_button = document.getElementById("clear-button");
 const convert_button = document.getElementById("convert-button");
 const save_button = document.getElementById("save-button");
 const warning = document.getElementById("warning");
+const warningClose = document.getElementById("warning-close");
 
 clear_button.addEventListener('click', function(){
     csv_input_text.value = "";
@@ -42,7 +43,9 @@ json_input_text.addEventListener('focusout', function(){
 
      }
 });
-
+warningClose.addEventListener('click', function(){
+     warning.style = "visiblity:none";
+});
 // CSV To JSON
 function CSVToArray(strData, strDelimiter) {
      // Check to see if the delimiter is defined. If not,

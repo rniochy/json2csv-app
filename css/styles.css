@@ -34,6 +34,9 @@ section h2 {
     border: 1px solid red;
     position: absolute;
     width: 3rem;
+    font-weight: bolder;
+    text-align: end;
+    left: 2rem;
 }
 #csv-json-content {
      display: flex;
