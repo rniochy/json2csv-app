@@ -21,7 +21,7 @@ header {
     position: relative;
     width: 100%;
     /* margin-top: 0rem 0 3rem 0; */
-    /* padding: 1rem; */
+    padding: 1rem;
     border-bottom: 1px solid #000;
 }
 h1 {
@@ -32,7 +32,6 @@ section h2 {
     font-size: 14pt;
 }
 #warning {
-    margin-top: 1rem;
     border: 1px solid red;
     position: absolute;
 }
