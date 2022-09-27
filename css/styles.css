@@ -5,6 +5,7 @@
      border: 0;
      text-decoration: none;
      box-sizing: border-box;
+     user-select: none;
 }
 body {
      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -57,6 +58,7 @@ section h2 {
     height: 170px;
     border: 1px solid #ccc;
     resize: none;
+    user-select: contain;
   }
   #clear-button {
     margin: 1rem;
@@ -81,9 +83,6 @@ section h2 {
     background-color: #5877ffda;
     border-color: #474ae9;
 }
-  .change {
-      
-  }
 @media screen and (min-width: 0px) and (max-width: 480px) {
     #content-main {
          position: relative;
