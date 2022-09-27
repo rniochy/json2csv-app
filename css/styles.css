@@ -25,6 +25,7 @@ header {
 h1 {
    font-size: 16pt;
    text-align: center;
+   margin-top: 0.6rem;
 }
 section h2 {
     font-size: 14pt;
