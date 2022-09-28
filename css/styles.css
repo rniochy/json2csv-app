@@ -31,13 +31,31 @@ section h2 {
     font-size: 14pt;
 }
 #warning {
+    display: flex;
+    column-gap: 0.3rem;
     border: 1px solid red;
     position: absolute;
-    width: 3rem;
+    left: 2rem;
     font-weight: bolder;
     text-align: end;
-    left: 2rem;
     visibility: hidden;
+    padding: 0.1rem;
+    margin-top: -0.3rem;
+    border-radius: 5px;
+}
+#warning-text {
+   font-size: 10pt;
+   margin-top: 0.2rem;
+}
+#warning-close {
+   font-size: 10.5pt;
+   text-align: center;
+   border: 1px solid #ccc;
+   height: 25px;
+   width: 25px;
+   padding: 0.1rem;
+   border-radius: 200px;
+   color: red;
 }
 #csv-json-content {
      display: flex;
