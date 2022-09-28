@@ -70,6 +70,9 @@ warningClose.addEventListener('click', function(){
 function setWarning(text){
      warningText.innerText = text;
      warning.style = 'visibility: visible';
+     setTimeout(()=>{
+      warning.style = 'visibility: hidden';
+     }, 5000)
 } 
 // CSV To JSON
 function CSVToArray(strData, strDelimiter) {
