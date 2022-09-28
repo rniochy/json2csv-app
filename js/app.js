@@ -68,8 +68,9 @@ warningClose.addEventListener('click', function(){
      warning.style = " visibility: hidden";
 });
 save_button.addEventListener('click',()=>{
-      if(convert_button.innerText==="Convert to JSON" && json_input_text.value)
-          window.open("data:text/json;charset=utf-8," +(json_input_text.value))
+     const text = "some text to save"
+     var blob = new Blob(["Hello World"],{type:"text/plain;charset=utf-8"});
+     saveAs(blob,"helloworld.txt");
 });
 function innertText(node, text){
      node.innerText = text;
