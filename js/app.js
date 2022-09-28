@@ -17,7 +17,7 @@ convert_button.addEventListener('click', function(){
           if(converted.length < 3){
                setWarning("Fill with CVS valid");  
           } else {
-                json_input_text.value = converted; 
+                innertText(json_input_text,converted); 
           }
      }
      // if(json_input_text.value){
@@ -29,7 +29,7 @@ convert_button.addEventListener('click', function(){
      //      }
      // }
 
-     (csv_input_text.value && json_input_text)? setWarning("Fill some field to convert"):''
+     (csv_input_text.value ===' ' && !json_input_text.value)? setWarning("Fill some field to convert"):''
 })
 
 clear_button.addEventListener('click', function(){
@@ -37,10 +37,12 @@ clear_button.addEventListener('click', function(){
     json_input_text.value = "";
     csv_input_text.removeAttribute('disabled');
     json_input_text.removeAttribute('disabled');
+    innertText(convert_button, "Convert");
 });
 
 csv_input_text.addEventListener('change', function(){
      if(csv_input_text.value){
+          innertText(convert_button,"Convert to CSV");
          json_input_text.setAttribute('disabled', true);
 
      }
@@ -68,12 +70,16 @@ warningClose.addEventListener('click', function(){
 });
 
 function setWarning(text){
-     warningText.innerText = text;
+     innertText(warningText,text);
      warning.style = 'visibility: visible';
      setTimeout(()=>{
       warning.style = 'visibility: hidden';
      }, 5000)
 } 
+
+function innertText(node, text){
+     node.innerText = text;
+}
 // CSV To JSON
 function CSVToArray(strData, strDelimiter) {
      // Check to see if the delimiter is defined. If not,
