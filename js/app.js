@@ -14,15 +14,21 @@ const warningClose = document.getElementById("warning-close");
 convert_button.addEventListener('click', function(){
      if(csv_input_text.value){
           const converted = CSV2JSON(csv_input_text.value);
-          
-          if(converted.length === 0){
-               warningText.innerText = "Fill with CVS valid";
-               warning.style = 'visibility: visible';
-               
-          }else {
-               json_input_text.value =converted;     
+          if(converted.length > 9){
+               setWarning("Fill with CVS valid");  
+          } else {
+                json_input_text.value = converted;
           }
      }
+     // if(json_input_text.value){
+     //      const converted = CSV2JSON(json_input_text.value);
+     //      if(converted.length > 9){
+     //           setWarning("Fill with JSON valid");    
+     //      } else {
+     //           csv_input_text.value = converted;
+     //      }
+     // }
+      setWarning("Fill some field to convert");
 })
 
 clear_button.addEventListener('click', function(){
@@ -59,6 +65,11 @@ json_input_text.addEventListener('focusout', function(){
 warningClose.addEventListener('click', function(){
      warning.style = " visibility: hidden";
 });
+
+function setWarning(text){
+     warningText.innerText = text;
+     warning.style = 'visibility: visible';
+} 
 // CSV To JSON
 function CSVToArray(strData, strDelimiter) {
      // Check to see if the delimiter is defined. If not,
