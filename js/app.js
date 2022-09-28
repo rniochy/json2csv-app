@@ -17,7 +17,7 @@ convert_button.addEventListener('click', function(){
           if(converted.length < 3){
                setWarning("Fill with CVS valid");  
           } else {
-                innertText(json_input_text,converted); 
+               json_input_text.value = converted 
           }
      }
      // if(json_input_text.value){
@@ -65,7 +65,8 @@ warningClose.addEventListener('click', function(){
      warning.style = " visibility: hidden";
 });
 save_button.addEventListener('click',()=>{
-      if(convert_button.innerText==="Convert to JSON")alert(convert_button.innerText);
+      if(convert_button.innerText==="Convert to JSON" && json_input_text.value)
+          window.open("data:text/json;charset=utf-8," +(json_input_text.value))
 });
 function setWarning(text){
      innertText(warningText,text);
