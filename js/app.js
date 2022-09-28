@@ -1,15 +1,15 @@
+const warning = document.getElementById("warning");
 const csv_input_text = document.getElementById("csv");
 const json_input_text = document.getElementById("json");
-const json_input_file = document.getElementById("input-json");
-const csv_input_file = document.getElementById("input-csv");
 const csv_button = document.getElementById("button-csv");
-const json_button = document.getElementById("button-json");
-const clear_button = document.getElementById("clear-button");
-const convert_button = document.getElementById("convert-button");
 const save_button = document.getElementById("save-button");
-const warning = document.getElementById("warning");
+const json_button = document.getElementById("button-json");
 const warningText = document.getElementById("warning-text");
+const csv_input_file = document.getElementById("input-csv");
+const clear_button = document.getElementById("clear-button");
+const json_input_file = document.getElementById("input-json");
 const warningClose = document.getElementById("warning-close");
+const convert_button = document.getElementById("convert-button");
 
 convert_button.addEventListener('click', function(){
      if(csv_input_text.value !== ' '){
@@ -42,33 +42,31 @@ clear_button.addEventListener('click', function(){
 
 csv_input_text.addEventListener('change', function(){
      if(csv_input_text.value){
-          innertText(convert_button,"Convert to CSV");
+          innertText(convert_button,"Convert to JSON");
          json_input_text.setAttribute('disabled', true);
-
      }
 });
 csv_input_text.addEventListener('focusout', function(){
      if(!csv_input_text.value){
          json_input_text.removeAttribute('disabled');
-
      }
 });
 json_input_text.addEventListener('change', function(){
      if(json_input_text.value){
         csv_input_text.setAttribute('disabled', true);
-
      }
 });
 json_input_text.addEventListener('focusout', function(){
      if(!json_input_text.value){
         csv_input_text.removeAttribute('disabled');
-
      }
 });
 warningClose.addEventListener('click', function(){
      warning.style = " visibility: hidden";
 });
-
+save_button.addEventListener('click',()=>{
+      if(convert_button.innerText==="Convert to JSON")alert(convert_button.innerText);
+});
 function setWarning(text){
      innertText(warningText,text);
      warning.style = 'visibility: visible';
@@ -76,7 +74,6 @@ function setWarning(text){
       warning.style = 'visibility: hidden';
      }, 5000)
 } 
-
 function innertText(node, text){
      node.innerText = text;
 }
@@ -86,7 +83,7 @@ function CSVToArray(strData, strDelimiter) {
      // then default to comma.
      strDelimiter = (strDelimiter || ",");
      // Create a regular expression to parse the CSV values.
-     var objPattern = new RegExp((
+     let objPattern = new RegExp((
      // Delimiters.
      "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
      // Quoted fields.
@@ -95,15 +92,15 @@ function CSVToArray(strData, strDelimiter) {
      "([^\"\\" + strDelimiter + "\\r\\n]*))"), "gi");
      // Create an array to hold our data. Give the array
      // a default empty first row.
-     var arrData = [[]];
+     let arrData = [[]];
      // Create an array to hold our individual pattern
      // matching groups.
-     var arrMatches = null;
+     let arrMatches = null;
      // Keep looping over the regular expression matches
      // until we can no longer find a match.
      while (arrMatches = objPattern.exec(strData)) {
          // Get the delimiter that was found.
-         var strMatchedDelimiter = arrMatches[1];
+         let strMatchedDelimiter = arrMatches[1];
          // Check to see if the given delimiter has a length
          // (is not the start of string) and if it matches
          // field delimiter. If id does not, then we know
@@ -119,11 +116,11 @@ function CSVToArray(strData, strDelimiter) {
          if (arrMatches[2]) {
              // We found a quoted value. When we capture
              // this value, unescape any double quotes.
-             var strMatchedValue = arrMatches[2].replace(
+             let strMatchedValue = arrMatches[2].replace(
              new RegExp("\"\"", "g"), "\"");
          } else {
              // We found a non-quoted value.
-             var strMatchedValue = arrMatches[3];
+             let strMatchedValue = arrMatches[3];
          }
          // Now that we have our value string, let's add
          // it to the data array.
@@ -134,17 +131,17 @@ function CSVToArray(strData, strDelimiter) {
  }
  
  function CSV2JSON(csv) {
-     var array = CSVToArray(csv);
-     var objArray = [];
-     for (var i = 1; i < array.length; i++) {
+     let array = CSVToArray(csv);
+     let objArray = [];
+     for (let i = 1; i < array.length; i++) {
          objArray[i - 1] = {};
-         for (var k = 0; k < array[0].length && k < array[i].length; k++) {
-             var key = array[0][k];
+         for (let k = 0; k < array[0].length && k < array[i].length; k++) {
+             let key = array[0][k];
              objArray[i - 1][key] = array[i][k]
          }
      }
-     var json = JSON.stringify(objArray);
-     var str = json.replace(/},/g, "},\r\n");
+     let json = JSON.stringify(objArray);
+     let str = json.replace(/},/g, "},\r\n");
  
      return str;
 }
