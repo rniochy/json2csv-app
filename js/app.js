@@ -160,8 +160,7 @@ function  JSON2CSV(objArray) {
      let str = "";
      rows.forEach(row => {
          let line = "";
-         let columns =
-             typeof row !== "object" ? JSON.parse(row) : Object.values(row);
+         let columns = typeof row !== "object" ? JSON.parse(row) : Object.values(row);
          columns.forEach(column => {
              if (line !== "") {
                  line += " ";
