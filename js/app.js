@@ -12,6 +12,7 @@ const warningClose = document.getElementById("warning-close");
 const convert_button = document.getElementById("convert-button");
 
 convert_button.addEventListener('click', function(){
+     console.log(csv_input_text.value)
      if(csv_input_text.value !== ' '){
           const converted = CSV2JSON(csv_input_text.value);
           if(converted.length < 3){
@@ -19,7 +20,8 @@ convert_button.addEventListener('click', function(){
           } else {
                json_input_text.value = converted 
           }
-     }
+     } 
+
      // if(json_input_text.value){
      //      const converted = CSV2JSON(json_input_text.value);
      //      if(converted.length > 9){
@@ -68,6 +70,9 @@ save_button.addEventListener('click',()=>{
       if(convert_button.innerText==="Convert to JSON" && json_input_text.value)
           window.open("data:text/json;charset=utf-8," +(json_input_text.value))
 });
+function innertText(node, text){
+     node.innerText = text;
+}
 function setWarning(text){
      innertText(warningText,text);
      warning.style = 'visibility: visible';
@@ -75,9 +80,6 @@ function setWarning(text){
       warning.style = 'visibility: hidden';
      }, 5000)
 } 
-function innertText(node, text){
-     node.innerText = text;
-}
 // CSV To JSON
 function CSVToArray(strData, strDelimiter) {
      // Check to see if the delimiter is defined. If not,
@@ -99,6 +101,7 @@ function CSVToArray(strData, strDelimiter) {
      let arrMatches = null;
      // Keep looping over the regular expression matches
      // until we can no longer find a match.
+     let strMatchedValue;
      while (arrMatches = objPattern.exec(strData)) {
          // Get the delimiter that was found.
          let strMatchedDelimiter = arrMatches[1];
@@ -117,11 +120,11 @@ function CSVToArray(strData, strDelimiter) {
          if (arrMatches[2]) {
              // We found a quoted value. When we capture
              // this value, unescape any double quotes.
-             let strMatchedValue = arrMatches[2].replace(
+             strMatchedValue = arrMatches[2].replace(
              new RegExp("\"\"", "g"), "\"");
          } else {
              // We found a non-quoted value.
-             let strMatchedValue = arrMatches[3];
+               strMatchedValue = arrMatches[3];
          }
          // Now that we have our value string, let's add
          // it to the data array.
