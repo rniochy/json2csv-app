@@ -12,7 +12,7 @@ const warningClose = document.getElementById("warning-close");
 const convert_button = document.getElementById("convert-button");
 
 convert_button.addEventListener('click', function(){
-     if(csv_input_text.value !== ' '){
+     if(convert_button.innerText === "Convert to JSON"){
           const converted = CSV2JSON(csv_input_text.value);
           if(converted.length < 3){
                setWarning("Fill with CVS valid");  
@@ -21,10 +21,10 @@ convert_button.addEventListener('click', function(){
           }
      } 
      
-     if(json_input_text.value !== ' '){
-          console.log(json_input_text.value)
+     if(convert_button.innerText === "Convert to CSV"){
           const converted = JSON2CSV(json_input_text.value);
-          if(converted.length > 9){
+          console.log(converted.length)
+          if(converted.length < 8){
                setWarning("Fill with JSON valid");    
           } else {
                csv_input_text.value = converted;
@@ -50,12 +50,12 @@ csv_input_text.addEventListener('change', function(){
 });
 csv_input_text.addEventListener('focusout', function(){
      if(!csv_input_text.value){
-          innertText(convert_button,"Convert to CSV");
          json_input_text.removeAttribute('disabled');
      }
 });
 json_input_text.addEventListener('change', function(){
      if(json_input_text.value){
+        innertText(convert_button,"Convert to CSV");
         csv_input_text.setAttribute('disabled', true);
      }
 });
@@ -155,7 +155,7 @@ function CSVToArray(strData, strDelimiter) {
 function  JSON2CSV(objArray) {
      let rows = typeof objArray !== "object" ? JSON.parse(objArray) : objArray;
      let  header = "";
-     Object.keys(rows[0]).map(pr => (header += pr + ";"));
+     Object.keys(rows[0]).map(pr => (header += pr + " "));
  
      let str = "";
      rows.forEach(row => {
@@ -164,7 +164,7 @@ function  JSON2CSV(objArray) {
              typeof row !== "object" ? JSON.parse(row) : Object.values(row);
          columns.forEach(column => {
              if (line !== "") {
-                 line += ";";
+                 line += " ";
              }
              if (typeof column === "object") {
                  line += JSON.stringify(column);
