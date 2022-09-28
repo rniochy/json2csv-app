@@ -12,7 +12,6 @@ const warningClose = document.getElementById("warning-close");
 const convert_button = document.getElementById("convert-button");
 
 convert_button.addEventListener('click', function(){
-     console.log(csv_input_text.value)
      if(csv_input_text.value !== ' '){
           const converted = CSV2JSON(csv_input_text.value);
           if(converted.length < 3){
@@ -21,15 +20,16 @@ convert_button.addEventListener('click', function(){
                json_input_text.value = converted 
           }
      } 
-
-     // if(json_input_text.value){
-     //      const converted = CSV2JSON(json_input_text.value);
-     //      if(converted.length > 9){
-     //           setWarning("Fill with JSON valid");    
-     //      } else {
-     //           csv_input_text.value = converted;
-     //      }
-     // }
+     
+     if(json_input_text.value !== ' '){
+          console.log(json_input_text.value)
+          const converted = JSON2CSV(json_input_text.value);
+          if(converted.length > 9){
+               setWarning("Fill with JSON valid");    
+          } else {
+               csv_input_text.value = converted;
+          }
+     }
 
      (csv_input_text.value ===' ' && !json_input_text.value)? setWarning("Fill some field to convert"):''
 })
@@ -50,6 +50,7 @@ csv_input_text.addEventListener('change', function(){
 });
 csv_input_text.addEventListener('focusout', function(){
      if(!csv_input_text.value){
+          innertText(convert_button,"Convert to CSV");
          json_input_text.removeAttribute('disabled');
      }
 });
@@ -149,3 +150,29 @@ function CSVToArray(strData, strDelimiter) {
  
      return str;
 }
+
+// Convert JSON TO CSV
+function  JSON2CSV(objArray) {
+     let rows = typeof objArray !== "object" ? JSON.parse(objArray) : objArray;
+     let  header = "";
+     Object.keys(rows[0]).map(pr => (header += pr + ";"));
+ 
+     let str = "";
+     rows.forEach(row => {
+         let line = "";
+         let columns =
+             typeof row !== "object" ? JSON.parse(row) : Object.values(row);
+         columns.forEach(column => {
+             if (line !== "") {
+                 line += ";";
+             }
+             if (typeof column === "object") {
+                 line += JSON.stringify(column);
+             }  else {
+                 line += column;
+             }
+         });
+         str += line + "\r\n";
+     });
+     return header + "\r\n" + str;
+ }
