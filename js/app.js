@@ -12,12 +12,12 @@ const warningText = document.getElementById("warning-text");
 const warningClose = document.getElementById("warning-close");
 
 convert_button.addEventListener('click', function(){
-     if(csv_input_text.value){
+     if(csv_input_text.value !== ' '){
           const converted = CSV2JSON(csv_input_text.value);
-          if(converted.length > 9){
+          if(converted.length < 3){
                setWarning("Fill with CVS valid");  
           } else {
-                json_input_text.value = converted;
+                json_input_text.value = converted; 
           }
      }
      // if(json_input_text.value){
@@ -28,7 +28,8 @@ convert_button.addEventListener('click', function(){
      //           csv_input_text.value = converted;
      //      }
      // }
-      setWarning("Fill some field to convert");
+
+     (csv_input_text.value && json_input_text)? setWarning("Fill some field to convert"):''
 })
 
 clear_button.addEventListener('click', function(){
