@@ -95,6 +95,7 @@
       background-color: #5877ff;
       border-color: #5659f1;
       margin-top: .1rem;
+      transition: all 500ms;
   }
   #buttons button:hover, #clear-button:hover{
     background-color: #5877ffda;
@@ -163,14 +164,15 @@
    div #csv, #json {
     height: 150px;
   }
-  #clear-button {
-    height: 28px;
-}
   #clear-button, #buttons {
     position: absolute;
     top: 18.5rem;
     left: 0;
   }
+  #clear-button {
+    top: 17.6rem;
+    height: 28px;
+}
   #buttons {
     left: -6.6rem;
     margin-left: 10.5rem;
