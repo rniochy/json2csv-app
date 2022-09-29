@@ -68,8 +68,11 @@ warningClose.addEventListener('click', function(){
      warning.style = " visibility: hidden";
 });
 save_button.addEventListener('click',()=>{
-     const text = "some text to save";
-     saveFormat(text, "json");
+     if(convert_button.innerText === "Convert to JSON")
+          saveFormat(json_input_text.value, "json");
+
+     if(convert_button.innerText === "Convert to CSV")
+          saveFormat(csv_input_text.value, "csv");
 });
 function innertText(node, text){
      node.innerText = text;
