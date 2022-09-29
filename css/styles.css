@@ -1,71 +1,71 @@
-* {
-     padding: 0;
-     margin: 0;
-     list-style: none;
-     border: 0;
-     text-decoration: none;
-     box-sizing: border-box;
-     user-select: none;
-}
-body {
-     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-     transition: all 500ms;
-    }
+  * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      border: 0;
+      text-decoration: none;
+      box-sizing: border-box;
+      user-select: none;
+  }
+  body {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      transition: all 500ms;
+      }
 
-#content-main {
-    display: flex;
-    flex-direction: column;
-}
-header {
-    position: relative;
-    width: 100%;
-    height: 3.4rem;
-    border-bottom: 1px solid #000;
-}
-h1 {
-   font-size: 16pt;
-   text-align: center;
-   margin-top: 0.6rem;
-}
-section h2 {
-    font-size: 14pt;
-}
-#warning {
-    display: flex;
-    column-gap: 0.3rem;
-    position: absolute;
-    left: 2rem;
-    font-weight: bolder;
-    text-align: end;
-    visibility: hidden;
+  #content-main {
+      display: flex;
+      flex-direction: column;
+  }
+  header {
+      position: relative;
+      width: 100%;
+      height: 3.4rem;
+      border-bottom: 1px solid #000;
+  }
+  h1 {
+    font-size: 16pt;
+    text-align: center;
+    margin-top: 0.6rem;
+  }
+  section h2 {
+      font-size: 14pt;
+  }
+  #warning {
+      display: flex;
+      column-gap: 0.3rem;
+      position: absolute;
+      left: 2rem;
+      font-weight: bolder;
+      text-align: end;
+      visibility: hidden;
+      padding: 0.1rem;
+      margin-top: -0.3rem;
+      border-radius: 5px;
+  }
+  #warning-text {
+    font-size: 9pt;
+    margin-top: 0.2rem;
+  }
+  #warning-close {
+    font-size: 9pt;
+    text-align: center;
+    border: 1px solid #ccc;
+    height: 25px;
+    width: 25px;
     padding: 0.1rem;
-    margin-top: -0.3rem;
-    border-radius: 5px;
-}
-#warning-text {
-   font-size: 9pt;
-   margin-top: 0.2rem;
-}
-#warning-close {
-   font-size: 9pt;
-   text-align: center;
-   border: 1px solid #ccc;
-   height: 25px;
-   width: 25px;
-   padding: 0.1rem;
-   border-radius: 100px;
-   color: red;
-}
-#csv-json-content {
-     display: flex;
-     flex-direction: row;
-     justify-content: center;
-     margin: 0.2rem 0 0.2rem 0;
-}
-.inputs {
-    display: flex;
-    flex-direction: column;
-}
+    border-radius: 100px;
+    color: red;
+  }
+  #csv-json-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin: 0.2rem 0 0.2rem 0;
+  }
+  .inputs {
+      display: flex;
+      flex-direction: column;
+  }
   .inputs input[type='file'], .inputs button {
      padding: 0.2rem;
      border: 1px solid rgba(0, 0, 0, 0.517);
@@ -77,35 +77,40 @@ section h2 {
       color: #ccc;
       background-color: #000;
   }
- #csv, #json {
-    height: 170px;
-    border: 1px solid #ccc;
-    resize: none;
-    user-select: contain;
+  #csv, #json {
+      height: 170px;
+      border: 1px solid #ccc;
+      resize: none;
+      user-select: contain;
+    }
+    #buttons {
+      align-self: center;
+    }
+    #buttons button, #clear-button {
+      padding: 5px 10px;
+      font-size: 12px;
+      line-height: 1.5;
+      border-radius: 3px;
+      color: #fff;
+      background-color: #5877ff;
+      border-color: #5659f1;
+      margin-top: .1rem;
+  }
+  #buttons button:hover, #clear-button:hover{
+    background-color: #5877ffda;
+    border-color: #474ae9;
   }
   #clear-button {
     margin: 1rem;
     height: 2rem;
     align-self: center;
-}
-
-  #buttons {
-     align-self: center;
+    background-color: rgb(229, 229, 30);
+    transition: all 500ms;
   }
-  #buttons button, #clear-button {
-    padding: 5px 10px;
-    font-size: 12px;
-    line-height: 1.5;
-    border-radius: 3px;
-    color: #fff;
-    background-color: #5877ff;
-    border-color: #5659f1;
-    margin-top: .1rem;
-}
-  #buttons button:hover, #clear-button:hover{
-    background-color: #5877ffda;
-    border-color: #474ae9;
-}
+  #clear-button:hover {
+    background-color: rgba(210, 210, 59, 0.829);
+  }
+
 @media screen and (min-width: 0px) and (max-width: 480px) {
     #content-main {
          position: relative;
@@ -163,7 +168,7 @@ section h2 {
 }
   #clear-button, #buttons {
     position: absolute;
-    top: 17.5rem;
+    top: 18.5rem;
     left: 0;
   }
   #buttons {
