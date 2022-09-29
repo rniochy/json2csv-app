@@ -13,7 +13,7 @@ const convert_button = document.getElementById("convert-button");
 
 convert_button.addEventListener('click', function(){
      if(convert_button.innerText === "Convert to JSON"){
-          const converted = CSV2JSON(csv_input_text.value);
+          const converted = CSV2JSON(csv_input_text.value.trim());
           if(converted.length < 3){
                setWarning("Fill with CVS valid");  
           } else {
@@ -22,7 +22,7 @@ convert_button.addEventListener('click', function(){
      } 
      
      if(convert_button.innerText === "Convert to CSV"){
-          const converted = JSON2CSV(json_input_text.value);
+          const converted = JSON2CSV(json_input_text.value.trim());
           console.log(converted.length)
           if(converted.length < 8){
                setWarning("Fill with JSON valid");    
@@ -68,9 +68,8 @@ warningClose.addEventListener('click', function(){
      warning.style = " visibility: hidden";
 });
 save_button.addEventListener('click',()=>{
-     const text = "some text to save"
-     var blob = new Blob([text],{type:"text/plain;charset=utf-8"});
-     saveAs(blob, "myFile.txt");
+     const text = "some text to save";
+     saveFormat(text, "json");
 });
 function innertText(node, text){
      node.innerText = text;
@@ -190,4 +189,9 @@ function  JSON2CSV(objArray) {
      if (isBlob) {
        window.URL.revokeObjectURL(url);
      }
+   }
+
+   function saveFormat(text,type){
+     var blob = new Blob([text],{type:`application/${type};charset=utf-8`});
+     saveAs(blob, `myFile.${type}`);
    }
