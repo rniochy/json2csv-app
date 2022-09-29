@@ -79,3 +79,10 @@ save_button.addEventListener('click',()=>{
 
           setWarning("Fill some field and convert to save");
 });
+
+csv_button.addEventListener('click', function(){
+      alert(); //csv_input_file
+});
+json_button.addEventListener('click', function(){
+     alert(); //json_input_file
+})
