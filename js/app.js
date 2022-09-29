@@ -76,4 +76,6 @@ save_button.addEventListener('click',()=>{
 
      if(convert_button.innerText === "Convert to CSV")
           saveFormat(csv_input_text.value, "csv");
+
+          setWarning("Fill some field and convert to save");
 });
