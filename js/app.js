@@ -69,8 +69,8 @@ warningClose.addEventListener('click', function(){
 });
 save_button.addEventListener('click',()=>{
      const text = "some text to save"
-     var blob = new Blob(["Hello World"],{type:"text/plain;charset=utf-8"});
-     saveAs(blob,"helloworld.txt");
+     var blob = new Blob([text],{type:"text/plain;charset=utf-8"});
+     saveAs(blob, "myFile.txt");
 });
 function innertText(node, text){
      node.innerText = text;
@@ -176,3 +176,18 @@ function  JSON2CSV(objArray) {
      });
      return header + "\r\n" + str;
  }
+
+ function saveAs(content, fileName) {
+     const a = document.createElement("a");
+     const isBlob = content.toString().indexOf("Blob") > -1;
+     let url = content;
+     if (isBlob) {
+       url = window.URL.createObjectURL(content);
+     }
+     a.href = url;
+     a.download = fileName;
+     a.click();
+     if (isBlob) {
+       window.URL.revokeObjectURL(url);
+     }
+   }
