@@ -45,6 +45,7 @@ clear_button.addEventListener('click', function(){
 csv_input_text.addEventListener('change', function(){
      if(csv_input_text.value){
           innertText(convert_button,"Convert to JSON");
+          innertText(save_button,"Save to JSON");
          json_input_text.setAttribute('disabled', true);
      }
 });
@@ -56,6 +57,7 @@ csv_input_text.addEventListener('focusout', function(){
 json_input_text.addEventListener('change', function(){
      if(json_input_text.value){
         innertText(convert_button,"Convert to CSV");
+        innertText(save_button,"Save to CSV");
         csv_input_text.setAttribute('disabled', true);
      }
 });
