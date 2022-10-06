@@ -23,7 +23,6 @@ convert_button.addEventListener('click', function(){
      
      if(convert_button.innerText === "Convert to CSV"){
           const converted = JSON2CSV(json_input_text.value.trim());
-          console.log(converted.length)
           if(converted.length < 8){
                setWarning("Fill with JSON valid");    
           } else {
@@ -111,14 +110,14 @@ csv_input_file.addEventListener('change', (event)=>{
                csv_input_text.innerText = fileReader.result;
                innertText(convert_button,"Convert to JSON");
                innertText(save_button,"Save to JSON");
-               json_input_text.setAttribute('disabled', true);
+              json_input_text.setAttribute('disabled', true);
                }
                fileReader.readAsText(fileTobeRead);
       }
       else {
           alert("Arquivo(s) não suportado(s)");
       }
-     alert()
+   
 });
 // csv_button.addEventListener('click', function(){
 //       alert(); //csv_input_file
