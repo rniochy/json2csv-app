@@ -89,6 +89,6 @@ function  JSON2CSV(objArray) {
         });
         str += line + "\r\n";
     });
-    return header + "\r\n" + str;
+    return header + "\r\n" +str;
 }
 
