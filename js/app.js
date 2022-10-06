@@ -101,6 +101,23 @@ json_input_file.addEventListener('change', (event) => {
 })
 
 csv_input_file.addEventListener('change', (event)=>{
+     const fileList = event.target.files[0];
+     const  fileTobeRead = fileList;
+     const fileReader = new FileReader();
+
+     if (window.File && window.FileReader && window.FileList && window.Blob) {
+         
+          fileReader.onload = function (e) {
+               csv_input_text.innerText = fileReader.result;
+               innertText(convert_button,"Convert to JSON");
+               innertText(save_button,"Save to JSON");
+               json_input_text.setAttribute('disabled', true);
+               }
+               fileReader.readAsText(fileTobeRead);
+      }
+      else {
+          alert("Arquivo(s) não suportado(s)");
+      }
      alert()
 });
 // csv_button.addEventListener('click', function(){
