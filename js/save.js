@@ -26,6 +26,6 @@ function setWarning(text){
     innertText(warningText,text);
     warning.style = 'visibility: visible';
     setTimeout(()=>{
-     warning.style = 'visibility: hidden';
+    warning.style = 'visibility: hidden';
     }, 5000)
 } 
