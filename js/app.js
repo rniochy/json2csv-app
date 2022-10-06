@@ -6,8 +6,8 @@ const save_button = document.getElementById("save-button");
 const json_button = document.getElementById("button-json");
 const warningText = document.getElementById("warning-text");
 const csv_input_file = document.getElementById("input-csv");
-const clear_button = document.getElementById("clear-button");
 const json_input_file = document.getElementById("input-json");
+const clear_button = document.getElementById("clear-button");
 const warningClose = document.getElementById("warning-close");
 const convert_button = document.getElementById("convert-button");
 
@@ -79,10 +79,26 @@ save_button.addEventListener('click',()=>{
 
           setWarning("Fill some field and convert to save");
 });
+json_input_file.addEventListener('change', (event) => {
+     const fileList = event.target.files[0];
+   
+     if (window.File && window.FileReader && window.FileList && window.Blob) {
 
-csv_button.addEventListener('click', function(){
-      alert(); //csv_input_file
-});
-json_button.addEventListener('click', function(){
-     alert(); //json_input_file
+              var fileTobeRead = json_input_file.files[0];
+                  var fileReader = new FileReader();
+                  fileReader.onload = function (e) {
+                    json_input_text.innerText = fileReader.result;
+                    console.log(fileReader.result)
+                  }
+                  fileReader.readAsText(fileTobeRead);
+      }
+      else {
+          alert("Arquivo(s) não suportado(s)");
+      }
 })
+// csv_button.addEventListener('click', function(){
+//       alert(); //csv_input_file
+// });
+// json_button.addEventListener('click', function(){
+//      alert(); //json_input_file
+// })
