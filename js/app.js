@@ -81,26 +81,28 @@ save_button.addEventListener('click',()=>{
 });
 
 json_input_file.addEventListener('change', (event) => {
-     const fileList = event.target.files[0];
-     const  fileTobeRead = fileList;
-     const fileReader = new FileReader();
-   
-     if (window.File && window.FileReader && window.FileList && window.Blob) {
-          
-          fileReader.onload = function (e) {
-               json_input_text.innerText = fileReader.result;
-               innertText(convert_button,"Convert to JSON");
-               innertText(save_button,"Save to JSON");
-               csv_input_text.setAttribute('disabled', true);
-               }
-               fileReader.readAsText(fileTobeRead);
-      }
-      else {
-          alert("Arquivo(s) não suportado(s)");
-      }
- })
+    const fileList = event.target.files[0];
+    const  fileTobeRead = fileList;
+    const fileReader = new FileReader();
+  
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+         
+         fileReader.onload = function (e) {
+              json_input_text.innerText = fileReader.result;
+              innertText(convert_button,"Convert to CSV");
+              innertText(save_button,"Save to CSV");
+              csv_input_text.setAttribute('disabled', true);
+              }
+              fileReader.readAsText(fileTobeRead);
+     }
+     else {
+         alert("Arquivo(s) não suportado(s)");
+     }
+})
 
-
+csv_input_file.addEventListener('change', (event)=>{
+     alert()
+});
 // csv_button.addEventListener('click', function(){
 //       alert(); //csv_input_file
 // });
